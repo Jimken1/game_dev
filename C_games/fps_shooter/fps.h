@@ -1,0 +1,4 @@
+#define MAX_ENEMIES 20
+#define MAX_BULLETS 100
+#define MAX_PARTICLES 200
+#define MAP_SIZE 50

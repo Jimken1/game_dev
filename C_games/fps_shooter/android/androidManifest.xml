@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yourcompany.tictactoe"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="30" />
+    
+    <!-- Required for touch screen games -->
+    <uses-feature android:name="android.hardware.touchscreen" android:required="true" />
+    
+    <!-- Optional: If you want to support controllers -->
+    <uses-feature android:name="android.hardware.gamepad" android:required="false" />
+    
+    <!-- Required permissions -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    
+    <!-- Screen orientation - portrait recommended for this game -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Tic Tac Toe"
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        
+        <activity
+            android:name="com.yourcompany.tictactoe.GameActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Tic Tac Toe"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+            
+            <!-- Enable immersive mode (fullscreen) -->
+            <meta-data android:name="android.app.lib_name" android:value="tictactoe" />
+            <meta-data android:name="android.app.immersive" android:value="true" />
+        </activity>
+    </application>
+</manifest>
